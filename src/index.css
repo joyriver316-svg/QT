@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-gray-800 font-sans;
+  }
+}
+
+@media print {
+  @page {
+    margin: 2.5cm 2cm;
+    size: A4;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: white !important;
+  }
+
+  /* Hide UI elements */
+  .no-print,
+  header,
+  button,
+  nav,
+  aside {
+    display: none !important;
+  }
+
+  /* Reset layout constraints for print */
+  .animate-fade-in {
+    animation: none !important;
+  }
+
+  .h-\[calc\(100vh-120px\)\] {
+    height: auto !important;
+  }
+
+  .overflow-y-auto {
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  /* Typography for book feel */
+  .print-content {
+    display: block !important;
+    font-family: 'serif';
+    line-height: 1.8;
+    color: #1c1917;
+    /* stone-900 */
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .print-title {
+    font-size: 24pt;
+    font-weight: bold;
+    margin-bottom: 20pt;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10pt;
+  }
+
+  .print-date {
+    font-size: 11pt;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 30pt;
+    text-align: right;
+  }
+
+  .print-body {
+    font-size: 12pt;
+    text-align: justify;
+    white-space: pre-wrap;
+  }
+
+  /* Page break handling */
+  .page-break {
+    page-break-before: always;
+  }
+
+  .avoid-break {
+    page-break-inside: avoid;
+  }
+}

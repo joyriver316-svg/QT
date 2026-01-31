@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "categoryId": "cat1",
+        "title": "가족의 건강을 위해",
+        "description": "부모님 무릎 수술이 잘 되게 해주세요.",
+        "status": "praying",
+        "createdAt": "2023-10-01",
+        "answeredAt": null,
+        "notes": "수술 날짜가 10월 15일로 잡혔습니다. 의료진을 위해 기도합니다.",
+        "answerNote": ""
+    },
+    {
+        "id": 2,
+        "categoryId": "cat2",
+        "title": "진로 문제 해결",
+        "description": "이직 준비 과정에서 지혜를 주세요.",
+        "status": "praying",
+        "createdAt": "2023-10-05",
+        "answeredAt": null,
+        "notes": "이력서 수정 중입니다.",
+        "answerNote": ""
+    },
+    {
+        "id": 3,
+        "categoryId": "cat2",
+        "title": "새로운 프로젝트 성공",
+        "description": "팀원들과 화합하여 좋은 성과를 내게 해주세요.",
+        "status": "answered",
+        "createdAt": "2023-09-15",
+        "answeredAt": "2023-10-10",
+        "notes": "프로젝트 킥오프 미팅 완료.",
+        "answerNote": "팀원들과의 갈등이 해소되고 성공적으로 런칭했습니다. 감사합니다."
+    }
+]
