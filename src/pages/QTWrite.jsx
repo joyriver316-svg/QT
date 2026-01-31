@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import Card from '../components/atoms/Card';
 import meditationsData from '../data/meditations.json';
 import { ArrowLeft, Save, Printer } from 'lucide-react';
@@ -7,6 +7,7 @@ import { ArrowLeft, Save, Printer } from 'lucide-react';
 export default function QTWrite() {
     const { id } = useParams();
     const navigate = useNavigate();
+    const location = useLocation();
     const [meditations, setMeditations] = useState(meditationsData);
 
     // Single consolidated content
@@ -29,9 +30,18 @@ export default function QTWrite() {
                 setDate(entry.date || new Date().toISOString().split('T')[0]);
             }
         } else {
+            // New Entry
             setDate(new Date().toISOString().split('T')[0]);
+
+            // Check for pre-passed daily verse
+            if (location.state?.dailyVerse) {
+                const { reference, text } = location.state.dailyVerse;
+                const preFilledContent = `[오늘의 말씀] ${reference}\n"${text}"\n\n[관찰]\n\n\n[해석]\n\n\n[적용]\n`;
+                setContent(preFilledContent);
+                setTitle(reference);
+            }
         }
-    }, [id, meditations]);
+    }, [id, meditations, location.state]);
 
     const handleSubmit = () => {
         console.log("Saved content:", content);

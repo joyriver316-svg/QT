@@ -73,7 +73,7 @@ export default function Home() {
 
                     <div className="mt-6 flex justify-end border-t border-primary/10 pt-4">
                         <button
-                            onClick={() => navigate('/qt/new')}
+                            onClick={() => navigate('/qt/new', { state: { dailyVerse } })}
                             className="flex items-center gap-2 text-primary font-bold hover:bg-primary/5 px-4 py-2 rounded-xl transition-colors"
                         >
                             <PenTool size={18} />

@@ -16,7 +16,7 @@ export default function Layout({ children }) {
         <div className="flex min-h-screen bg-background text-stone-800">
             {/* Desktop Sidebar */}
             <aside className="hidden md:flex flex-col w-64 p-6 bg-surface border-r border-stone-200">
-                <h1 className="text-2xl font-serif font-bold text-primary mb-10">Hesed Diary</h1>
+                <h1 className="text-2xl font-serif font-bold text-primary mb-10">His Will Diary</h1>
                 <nav className="flex-1 space-y-2">
                     {navItems.map((item) => {
                         const Icon = item.icon;
@@ -26,8 +26,8 @@ export default function Layout({ children }) {
                                 key={item.path}
                                 to={item.path}
                                 className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${isActive
-                                        ? 'bg-primary/10 text-primary font-medium'
-                                        : 'text-stone-500 hover:bg-stone-50'
+                                    ? 'bg-primary/10 text-primary font-medium'
+                                    : 'text-stone-500 hover:bg-stone-50'
                                     }`}
                             >
                                 <Icon size={20} />
